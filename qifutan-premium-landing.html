@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Qifutan 3-in-1 | دعم تيليفون بريميوم للسيارة</title>
+  <meta name="description" content="Qifutan 3-in-1 دعم تيليفون بريميوم للسيارة. آمن، ثابت، وأناقـة داخل طوموبيلتك. عرض خاص 149 درهم مع التوصيل المجاني والدفع عند الاستلام." />
+  <style>
+    :root {
+      --bg: #f6f7fb;
+      --text: #0d1321;
+      --muted: #5b6475;
+      --card: #ffffff;
+      --line: #e7eaf0;
+      --accent: #0a84ff;
+      --accent-dark: #006de0;
+      --success: #20a464;
+      --danger: #e03d3d;
+      --shadow: 0 20px 45px rgba(12, 24, 44, 0.08);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Tahoma, Arial, sans-serif;
+      background: radial-gradient(circle at 20% 0, #ffffff 0, var(--bg) 40%);
+      color: var(--text);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    .container { width: min(1120px, 92%); margin: auto; }
+    .section { padding: 86px 0; position: relative; }
+    .tag {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: #edf5ff;
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: .2px;
+    }
+    h1, h2, h3 { margin: 0 0 12px; line-height: 1.15; letter-spacing: -.3px; }
+    h1 { font-size: clamp(2rem, 6vw, 4rem); font-weight: 800; }
+    h2 { font-size: clamp(1.7rem, 4.5vw, 2.8rem); font-weight: 800; }
+    h3 { font-size: clamp(1.15rem, 3.2vw, 1.5rem); font-weight: 700; }
+    p { margin: 0 0 14px; color: var(--muted); font-size: clamp(1rem, 2.8vw, 1.08rem); }
+
+    .btn {
+      border: 0;
+      border-radius: 14px;
+      padding: 14px 22px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+    }
+    .btn-primary { background: linear-gradient(135deg, var(--accent), var(--accent-dark)); color: #fff; box-shadow: 0 14px 30px rgba(10,132,255,.28); }
+    .btn-secondary { background: #111827; color: #fff; box-shadow: 0 10px 25px rgba(17,24,39,.18); }
+    .btn:hover { transform: translateY(-2px); }
+
+    .hero {
+      padding: 30px 0 80px;
+    }
+    .hero-wrap {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 28px;
+      align-items: center;
+      background: linear-gradient(160deg, #fff 0%, #f8fbff 60%, #eef5ff 100%);
+      border: 1px solid #e8edf7;
+      border-radius: 34px;
+      padding: clamp(24px, 4vw, 42px);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .price-box {
+      display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+      margin: 18px 0 16px;
+    }
+    .old { color: #8b93a4; text-decoration: line-through; font-weight: 600; }
+    .new { color: var(--danger); font-size: 2rem; font-weight: 800; }
+    .meta { display: flex; gap: 16px; flex-wrap: wrap; font-size: .95rem; color: #334155; }
+    .meta span { background: #fff; border: 1px solid var(--line); padding: 8px 12px; border-radius: 999px; }
+
+    .mockup {
+      position: relative;
+      min-height: 380px;
+      border-radius: 26px;
+      background: radial-gradient(circle at 70% 20%, #e9f2ff, #f8f9fe 45%, #fff 100%);
+      border: 1px solid #ebeff8;
+      box-shadow: inset 0 -14px 25px rgba(255,255,255,.7);
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
+    .mockup::before {
+      content: "";
+      position: absolute;
+      width: 190px;
+      height: 190px;
+      border-radius: 50%;
+      background: rgba(10,132,255,.14);
+      filter: blur(4px);
+      top: 10%; left: 10%;
+    }
+    .product-visual {
+      width: min(320px, 86%);
+      aspect-ratio: 1 / 1;
+      border-radius: 28px;
+      background: linear-gradient(160deg, #131822 0, #2f3648 100%);
+      box-shadow: 0 26px 38px rgba(3, 12, 28, 0.38);
+      position: relative;
+      transform: translateY(var(--parallax, 0px));
+      transition: transform .15s linear;
+    }
+    .product-visual::before,
+    .product-visual::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #4d5b79, #21283b);
+    }
+    .product-visual::before { width: 52%; height: 18px; top: 40%; right: -8%; }
+    .product-visual::after { width: 22%; height: 130px; left: 42%; bottom: -12%; border-radius: 16px; }
+
+    .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+    .icon {
+      width: 42px; height: 42px; border-radius: 12px;
+      display: inline-grid; place-items: center;
+      background: #eaf3ff; color: var(--accent); font-size: 1.2rem; margin-bottom: 10px;
+    }
+
+    .features { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 16px; }
+    .feature-item { padding: 22px; border-radius: 18px; background: #fff; border: 1px solid var(--line); box-shadow: var(--shadow); }
+
+    .gallery {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .slides { display: flex; transition: transform .45s ease; }
+    .slide {
+      min-width: 100%;
+      padding: clamp(22px, 4vw, 46px);
+      background: linear-gradient(160deg, #ffffff, #f3f7ff);
+      display: grid; place-items: center;
+    }
+    .slide-inner {
+      width: min(460px, 92%);
+      aspect-ratio: 16/9;
+      border-radius: 18px;
+      background: linear-gradient(145deg, #111827, #374151);
+      color: #fff;
+      display: grid; place-items: center;
+      font-size: 1.1rem; font-weight: 700;
+      box-shadow: 0 20px 35px rgba(17,24,39,.35);
+    }
+    .slider-nav { display: flex; justify-content: center; gap: 10px; padding: 0 0 20px; }
+    .dot {
+      width: 11px; height: 11px; border-radius: 50%; border: 0;
+      background: #d0d8e8; cursor: pointer;
+    }
+    .dot.active { background: var(--accent); }
+
+    .steps { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 16px; }
+    .step { position: relative; }
+    .step strong { color: var(--text); font-size: 1.4rem; display: block; margin-bottom: 6px; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+    th, td { padding: 14px 12px; text-align: center; border-bottom: 1px solid #edf0f6; }
+    th { background: #f8fbff; font-weight: 700; color: #1e293b; }
+    .ok { color: var(--success); font-weight: 700; }
+    .bad { color: #9ca3af; }
+
+    .faq-item { border-bottom: 1px solid var(--line); }
+    .faq-q {
+      width: 100%; text-align: right; border: 0; background: transparent; padding: 16px 4px;
+      font-size: 1.04rem; font-weight: 700; color: #111827; cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height .35s ease; color: var(--muted); padding: 0 4px; }
+    .faq-item.open .faq-a { max-height: 180px; padding-bottom: 14px; }
+
+    .urgency {
+      background: linear-gradient(145deg, #fff8f8, #ffe9e9);
+      border: 1px solid #ffd2d2;
+      color: #7f1d1d;
+      border-radius: 16px;
+      padding: 14px;
+      font-weight: 700;
+      margin-top: 16px;
+    }
+
+    .trust-row {
+      display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 12px; margin-top: 18px;
+    }
+    .trust { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 12px; text-align: center; font-weight: 600; color:#334155; }
+
+    .sticky-buy {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      left: 10px;
+      display: flex;
+      gap: 10px;
+      z-index: 90;
+    }
+    .sticky-buy a { flex: 1; text-align: center; }
+
+    .wa-float {
+      position: fixed;
+      left: 14px;
+      bottom: 86px;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      text-decoration: none;
+      color: #fff;
+      font-size: 1.35rem;
+      background: #25D366;
+      box-shadow: 0 10px 24px rgba(37,211,102,.35);
+      z-index: 90;
+    }
+
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.show { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 920px) {
+      .hero-wrap, .grid-2 { grid-template-columns: 1fr; }
+      .features { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .steps { grid-template-columns: 1fr; }
+      .trust-row { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .section { padding: 68px 0; }
+    }
+    @media (max-width: 560px) {
+      .features { grid-template-columns: 1fr; }
+      .hero { padding-bottom: 60px; }
+      .new { font-size: 1.7rem; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero section">
+      <div class="container hero-wrap reveal">
+        <div>
+          <span class="tag">عرض محدود اليوم فقط</span>
+          <h1>Qifutan 3-in-1<br>ثبات فاخر... وسياقة آمنة ليك ولعائلتك</h1>
+          <p>واش عيّيتي من تيليفون كيطيح وانت سايق؟ مع Qifutan، الموبايل ديالك كيبقى ثابت قدامك بستايل بريميوم كيزيّن الطابلو ديال الطوموبيل.</p>
+          <div class="price-box">
+            <span class="old">بدل 249 درهم</span>
+            <span class="new">149 درهم</span>
+          </div>
+          <div class="meta">
+            <span>🚚 توصيل مجاني لجميع المدن</span>
+            <span>💵 خلّص ملي يوصلك (COD)</span>
+            <span>🛡 ضمان 7 أيام</span>
+          </div>
+          <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap;">
+            <a href="#order" class="btn btn-primary">طلب دابا قبل ما يسالي العرض</a>
+            <a href="#how" class="btn btn-secondary">شوف كيفاش كيخدم</a>
+          </div>
+          <div class="urgency">⏳ الكمية محدودة فهاد التخفيض، بزاف ديال الطلبات جاية من فيسبوك وTikTok.</div>
+        </div>
+        <div class="mockup">
+          <div class="product-visual" id="parallax"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <article class="card reveal">
+          <h2>المشكل لي كيعصب أي سائق</h2>
+          <p>حاملات رخاص كيهزو الموبايل غير شوية ومن بعد كيطيح فجوج ثواني. النتيجة؟ تشتيت فالطريق، خطر عليك وعلى الناس لي معاك.</p>
+          <p>إلى كتسوق بزاف ولا كتخدم بـGPS، راه الثبات ماشي رفاهية... راه ضرورة.</p>
+        </article>
+        <article class="card reveal">
+          <h2>الحل؟ Qifutan 3-in-1</h2>
+          <p>تصميم ذكي كيركب فـ 3 بلايص (الزجاج، الطابلو، وفتحة التهوية) باش تختار الوضعية لي مريحة ليك.</p>
+          <p>قبضة قوية، دوران 360°، وتركيب ساهل فدقيقة. النتيجة: تحكم أفضل، شكل أفخم، وسواقة هانية.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="reveal" style="text-align:center;max-width:760px;margin:0 auto 22px;">
+          <span class="tag">علاش الناس كيعجبهم Qifutan؟</span>
+          <h2>مزايا كتعطيك راحة وثقة كل نهار</h2>
+        </div>
+        <div class="features">
+          <div class="feature-item reveal"><div class="icon">🔒</div><h3>ثبات قوي</h3><p>كيشد التيليفون مزيان حتى فالطرقان المكسّرين.</p></div>
+          <div class="feature-item reveal"><div class="icon">🌀</div><h3>دوران 360°</h3><p>بدّل بين الطول والعرض حسب الخريطة ولا المكالمات.</p></div>
+          <div class="feature-item reveal"><div class="icon">⚙️</div><h3>3 طرق التركيب</h3><p>فالباربريز، الطابلو، أو أير فينت بسهولة.</p></div>
+          <div class="feature-item reveal"><div class="icon">✨</div><h3>ستايل بريميوم</h3><p>كيبان بحال إكسسوار غالي وراقي داخل السيارة.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container reveal">
+        <div style="text-align:center;max-width:760px;margin:0 auto 22px;">
+          <h2>معرض المنتج</h2>
+          <p>تصميم عصري متوافق مع أغلب الهواتف والسيارات.</p>
+        </div>
+        <div class="gallery">
+          <div class="slides" id="slides">
+            <div class="slide"><div class="slide-inner">منظر فاخر فوق الطابلو</div></div>
+            <div class="slide"><div class="slide-inner">ثبات حتى فالحفر والمطبات</div></div>
+            <div class="slide"><div class="slide-inner">زاوية مثالية للـGPS</div></div>
+          </div>
+          <div class="slider-nav" id="dots"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="how">
+      <div class="container reveal">
+        <h2 style="text-align:center;margin-bottom:18px;">كيفاش كتستعملو؟ 3 خطوات فقط</h2>
+        <div class="steps">
+          <div class="card step"><strong>01</strong><h3>ركّب القاعدة</h3><p>اختار البلاصة المناسبة وثبّت الحامل بإحكام.</p></div>
+          <div class="card step"><strong>02</strong><h3>حط التيليفون</h3><p>حلّ القبضة، دخل الموبايل وخليه يشد بوحدو.</p></div>
+          <div class="card step"><strong>03</strong><h3>عدّل الزاوية</h3><p>دوّر 360° وخلي الشاشة قدّام عينك بأمان.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div style="text-align:center;max-width:760px;margin:0 auto 22px;" class="reveal">
+          <span class="tag">آراء الزبناء</span>
+          <h2>ناس من المغرب جربوه وارتاحو</h2>
+        </div>
+        <div class="grid-2">
+          <div class="card reveal"><h3>يونس من كازا</h3><p>"بصراحة الجودة فوق المتوقع. ركبتو فوق الطابلو وGPS ولا واضح بزاف. كيحسسك بمنتوج غالي."</p></div>
+          <div class="card reveal"><h3>سلمى من الرباط</h3><p>"كنت كنخاف من التيليفون يطيح وأنا مع ولادي. دابا ثابث ومطمّنة فالسياقة."</p></div>
+          <div class="card reveal"><h3>حمزة من مراكش</h3><p>"خدام مزيان فخدمة التوصيل، ما كيتحركش فالمطبات. أنصح به لأي سائق محترف."</p></div>
+          <div class="card reveal"><h3>نوال من طنجة</h3><p>"ستايلو زوين داخل السيارة وكيتحط بسرعة. أحسن من الحاملات الرخاص."</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container reveal">
+        <h2 style="text-align:center;margin-bottom:18px;">مقارنة سريعة قبل ما تقرر</h2>
+        <table>
+          <thead>
+            <tr><th>الميزة</th><th>Qifutan 3-in-1</th><th>حاملات رخيصة</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>الثبات فالطريق</td><td class="ok">ثابت بزاف</td><td class="bad">كيتهز/كيطيح</td></tr>
+            <tr><td>المنظر داخل السيارة</td><td class="ok">بريميوم وأنيق</td><td class="bad">شكل عادي</td></tr>
+            <tr><td>مرونة التركيب</td><td class="ok">3 أماكن</td><td class="bad">مكان واحد غالباً</td></tr>
+            <tr><td>راحة الاستعمال</td><td class="ok">بيد وحدة</td><td class="bad">متعب</td></tr>
+            <tr><td>القيمة مقابل الثمن</td><td class="ok">ممتازة</td><td class="bad">مؤقتة</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <article class="card reveal">
+          <span class="tag">ضمان كامل</span>
+          <h2>جرّبو بلا خوف</h2>
+          <p>إلى ما عجبكش المنتج، عندك 7 أيام ضمان للاستبدال أو الاسترجاع حسب الشروط. هدفنا توصلك جودة تفرّحك.</p>
+          <div class="trust-row">
+            <div class="trust">🔐 طلب آمن</div>
+            <div class="trust">🚚 شحن مجاني</div>
+            <div class="trust">💵 COD</div>
+            <div class="trust">✅ فحص قبل الإرسال</div>
+          </div>
+        </article>
+        <article class="card reveal" id="order">
+          <h2>طلب سريع عبر Shopify</h2>
+          <p>الطلب ديالك كيتم بشكل آمن، والتخليص عند الاستلام. مناسب 100% للزبون المغربي.</p>
+          <p><strong>ثمن العرض:</strong> <span style="color:var(--danger);font-size:1.35rem;font-weight:800;">149 MAD</span></p>
+          <a class="btn btn-primary" href="/cart/PRODUCT_ID_PLACEHOLDER:1" style="width:100%;">اطلب دابا - الدفع عند الاستلام</a>
+          <p style="margin-top:10px;font-size:.92rem;">بدّل <code>PRODUCT_ID_PLACEHOLDER</code> بآي دي المنتج فـ Shopify.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container card reveal">
+        <h2 style="text-align:center;">أسئلة كتتعاود بزاف</h2>
+        <div class="faq-item open">
+          <button class="faq-q">واش كاين الدفع عند الاستلام؟ <span>＋</span></button>
+          <div class="faq-a">أكيد، كتخلص غير ملي توصلك الطلبية حتى لباب دارك.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">واش مناسب لأي نوع ديال التيليفونات؟ <span>＋</span></button>
+          <div class="faq-a">نعم، كيدعم أغلب الهواتف الذكية بأحجام مختلفة.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">شحال كياخد التوصيل؟ <span>＋</span></button>
+          <div class="faq-a">غالباً بين 24 و72 ساعة حسب المدينة والضغط على الشحن.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">واش التركيب صعيب؟ <span>＋</span></button>
+          <div class="faq-a">لا، ساهل بزاف وكيحتاج دقيقة تقريباً، بلا أدوات معقدة.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container card reveal" style="text-align:center;background:linear-gradient(165deg,#fff,#edf5ff);">
+        <h2>خلي السياقة ديالك آمنة ومرتاحة من اليوم</h2>
+        <p>اختار الجودة لي كتعكس ذوقك وتحمي تركيزك فالطريق. العرض الحالي محدود ومناسب لعدد قليل من الطلبات.</p>
+        <a href="/cart/PRODUCT_ID_PLACEHOLDER:1" class="btn btn-primary">✅ نعم، بغيت Qifutan بـ 149 درهم</a>
+      </div>
+    </section>
+  </main>
+
+  <div class="sticky-buy">
+    <a href="/cart/PRODUCT_ID_PLACEHOLDER:1" class="btn btn-primary">🛒 طلب دابا بـ 149 MAD</a>
+    <a href="https://wa.me/212600000000?text=سلام،%20بغيت%20نطلب%20Qifutan%203-in-1" class="btn btn-secondary">WhatsApp</a>
+  </div>
+
+  <a class="wa-float" href="https://wa.me/212600000000?text=سلام،%20بغيت%20معلومات%20على%20Qifutan" aria-label="واتساب">✆</a>
+
+  <script>
+    // Lightweight slider
+    const slides = document.getElementById('slides');
+    const dotsWrap = document.getElementById('dots');
+    const total = slides.children.length;
+    let index = 0;
+
+    for (let i = 0; i < total; i++) {
+      const dot = document.createElement('button');
+      dot.className = 'dot' + (i === 0 ? ' active' : '');
+      dot.addEventListener('click', () => goTo(i));
+      dotsWrap.appendChild(dot);
+    }
+    const dots = [...dotsWrap.children];
+
+    function goTo(i) {
+      index = i;
+      slides.style.transform = `translateX(${index * -100}%)`;
+      dots.forEach((d, idx) => d.classList.toggle('active', idx === index));
+    }
+    setInterval(() => goTo((index + 1) % total), 3800);
+
+    // Scroll reveal with IntersectionObserver
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('show');
+      });
+    }, { threshold: 0.18 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // FAQ toggle
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.querySelector('.faq-q').addEventListener('click', () => {
+        item.classList.toggle('open');
+      });
+    });
+
+    // Subtle parallax in hero
+    const visual = document.getElementById('parallax');
+    window.addEventListener('scroll', () => {
+      const y = Math.min(window.scrollY * 0.12, 24);
+      visual.style.setProperty('--parallax', `${y}px`);
+    }, { passive: true });
+
+    // Editable placeholders
+    // PRICE_MAD: 149
+    // WHATSAPP_NUMBER: 212600000000
+    // SHOPIFY_PRODUCT_ID: PRODUCT_ID_PLACEHOLDER
+  </script>
+</body>
+</html>
